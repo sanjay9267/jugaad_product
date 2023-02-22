@@ -1,0 +1,5 @@
+name: Jugaad Products
+type: module
+description: Create Jugaad Product content type and barcode block.
+core_version_requirement: ^8 || ^9
+package: Jugaad

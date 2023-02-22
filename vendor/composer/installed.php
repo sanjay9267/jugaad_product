@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'drupal/jugaad_product',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+        'type' => 'drupal-module',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'drupal/jugaad_product' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tecnickcom/tc-lib-barcode' => array(
+            'pretty_version' => '1.17.19',
+            'version' => '1.17.19.0',
+            'reference' => '8dbed267c44cb95a903d1149b81752ec4401dab1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tc-lib-barcode',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tecnickcom/tc-lib-color' => array(
+            'pretty_version' => '1.14.18',
+            'version' => '1.14.18.0',
+            'reference' => 'c430e0b8a8847935a72bc5fcc334d1e4d029e23b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tc-lib-color',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
