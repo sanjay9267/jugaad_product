@@ -1,9 +1,0 @@
-{
-  "name": "drupal/jugaad_product",
-  "type": "drupal-module",
-  "description": "Generate Barcodes of different types.",
-  "keywords": ["Drupal"],
-  "require": {
-    "tecnickcom/tc-lib-barcode": "^1"
-  }
-}
