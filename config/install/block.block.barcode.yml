@@ -3,9 +3,11 @@ status: true
 dependencies:
   module:
     - jugaad_product
-    - system
+    - node
   theme:
     - olivero
+_core:
+  default_config_hash: __qJnTWpOpNiAvPEYuWz9xXdQ8pJJDJcV24G2aj6vt0
 id: barcode
 theme: olivero
 region: sidebar
@@ -18,7 +20,10 @@ settings:
   label_display: visible
   provider: jugaad_product
 visibility:
-  request_path:
-    id: request_path
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    pages: '<front>'
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      product: product

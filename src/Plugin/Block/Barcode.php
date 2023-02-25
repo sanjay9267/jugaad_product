@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Cache\Cache;
 use Symfony\Component\HttpFoundation\Request;
-require ('autoload.php');
+//require ('autoload.php');
 
 /**
  * Provides a 'Barcode' block.
@@ -27,24 +27,22 @@ class Barcode extends BlockBase{
    */
   public function build() {
     $node = \Drupal::request()->attributes->get('node');
-    $nid = $node->id();
     $field_app_purchase_link = $node->get('field_app_purchase_link')->getString();
-    //$field_app_purchase_link = "https://tecnick.com";
     $generator = new BarcodeGenerator();
+    
     // generate a barcode
     $barcode = $generator->getBarcodeObj(
-      'QRCODE,H',                     // barcode type and additional comma-separated parameters
+      'QRCODE',                     // barcode type and additional comma-separated parameters
       $field_app_purchase_link,          // data string to encode
       -4,                             // bar width (use absolute or negative value as multiplication factor)
       -4,                             // bar height (use absolute or negative value as multiplication factor)
       'black',                        // foreground color
       array(-2, -2, -2, -2)           // padding (use absolute or negative values as multiplication factors)
-    )->setBackgroundColor('white'); // background color
+    ); // background color
 
-    $output = ''            ;
-    $output .= $barcode->getHtmlDiv();
     return [
-      '#markup' => $output,
+      '#theme' => 'barcode__qrcode',
+      '#barcode' => $barcode->getHtmlDiv(),
     ];
   }
 
